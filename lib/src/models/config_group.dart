@@ -59,18 +59,18 @@ class ConfigGroup {
 class FunctionalGroup {
   String? _name;
   String? _id;
-  dynamic? _functionalGroup;
+  FunctionalGroup? _functionalGroup;
   List<int>? _uaIDref;
 
   String? get name => _name;
   String? get id => _id;
-  dynamic? get functionalGroup => _functionalGroup;
+  FunctionalGroup? get functionalGroup => _functionalGroup;
   List<int>? get uaIDref => _uaIDref;
 
   FunctionalGroup({
       String? name, 
-      String? id, 
-      dynamic? functionalGroup, 
+      String? id,
+    FunctionalGroup? functionalGroup,
       List<int>? uaIDref}){
     _name = name;
     _id = id;
@@ -86,7 +86,7 @@ class FunctionalGroup {
   }
 
   Map<String, dynamic> toJson() {
-    var map = <String, dynamic>{};
+    final Map<String, dynamic> map = <String, dynamic>{};
     map["Name"] = _name;
     map["ID"] = _id;
     map["FunctionalGroup"] = _functionalGroup;
